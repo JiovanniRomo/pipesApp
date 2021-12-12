@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRouterModule } from './app-router.module';
 
 import { AppComponent } from './app.component';
 
@@ -9,7 +10,8 @@ import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, PrimeNgModule, SharedModule],
+  //Organizar por prioridad, primero los modulos de Angular, despues los nuestros
+  imports: [BrowserModule,  AppRouterModule, PrimeNgModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],
 })
