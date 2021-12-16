@@ -1,1 +1,54 @@
-<p>basicos works!</p>
+<div class="text-layout">
+    <h1>Pipes basicos</h1>
+    <p>Pipes incluidos en Angular - Usualmente en CommonModule</p>
+</div>
+
+<div class="grid">
+    <div class="col-4">
+        <p-card header="upperCase" [subheader]="nombreLower | uppercase">
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="lowerCase" [subheader]="nombreUpper | lowercase">
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="tittleCase" [subheader]="nombreCompleto | titlecase">
+        </p-card>
+    </div>
+</div>
+
+
+<div class="text-layout">
+    <h1>Date | Fecha | Pipe</h1>
+    <p>
+        Pipe para mostrar las fechas
+    </p>
+</div>
+
+<div class="grid">
+    <div class="col-6">
+        <p-card>
+            <ul>
+                <li> Fecha </li>
+                <li> Fecha | date: 'short'</li>
+                <li> Fecha | date: 'long'</li>
+                <li> Custom Date: fecha | date: 'GGG'</li>
+            </ul>
+        </p-card>
+    </div>
+
+    <div class="col-6">
+        <p-card>
+            <ul>
+                <li>{{ fecha }}</li>
+                <li>{{ fecha | date}}</li>
+
+                <!-- Quiero que en el pipe date utilices el formato 'short' -->
+                <li>{{ fecha | date: 'short'}}</li>
+                <li>{{ fecha | date: 'long'}}</li>
+                <li>Custom Date: {{ fecha | date: 'GGG'}}</li>
+            </ul>
+        </p-card>
+    </div>
+</div>
