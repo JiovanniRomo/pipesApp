@@ -1,1 +1,29 @@
-<p>numeros works!</p>
+<div class="text-layout">
+    <h1>Decimal pipe y porcentaje</h1>
+    <p>Pipes incluidos en Angular - Usualmente en CommonModule</p>
+</div>
+
+<div class="grid">
+    <div class="col-4">
+        <p-card header="Ventas Netas" subheader="Presente">
+            <i class="pi pi-dollar"></i>
+            <!-- El 1 sirve para indicar que queremos todos los numeros ENTEROS seguidos de un numero especifico de decimales -->
+            <!-- En este caso queremos 2 decimales ademas de toda la parte entera (o lo que viene antes del punto) -->
+            {{ventasNetas | number : '1.2-2'}}
+        </p-card>
+    </div>
+
+    <div class="col-4">
+        <p-card header="Ventas Brutas" subheader="Presente">
+            <!-- Al usar monedas, es buena idea utilizar 4 decimales -->
+            {{(ventasNetas + 2000000) | currency: 'CAD' : 'symbol-narrow' : '1.4-4'}}
+        </p-card>
+    </div>
+
+    
+    <div class="col-4">
+        <p-card header="Ganancia porcentual" subheader="Presente">
+            {{ porcentaje | percent : '1.2-2' }}
+        </p-card>
+    </div>
+</div>
